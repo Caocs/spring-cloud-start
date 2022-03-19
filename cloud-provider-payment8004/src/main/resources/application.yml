@@ -1,0 +1,11 @@
+server:
+  port: 8004
+
+#服务别名----注册zookeeper到注册中心名称
+spring:
+  application:
+    name: cloud-payment-service
+  cloud:
+    zookeeper:
+      # 在本地配置了Zookeeper伪分布式集群
+      connect-string: localhost:2181,localhost:2182,localhost:2183
