@@ -18,11 +18,20 @@ import javax.annotation.Resource;
 @Slf4j
 public class OrderController {
 
-    private static final String PAYMENT_URL = "http://localhost:8001";
+    /**
+     * (1)单机版时，指定IP没问题。（http://localhost:8001）
+     * (2)但是集群时，指定应用名。（http://CLOUD-PAYMENT-SERVICE）(大写，因为注册到Eureka上的应用名为大写)
+     * 同时，需要开启RestTemplate的负载均衡。
+     * Ribbon和Eureka整合后Consumer可以直接调用服务而不用再关心地址和端口号，且该服务还有负载功能了。
+     */
+    private static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Resource
     private RestTemplate restTemplate;
 
+    /**
+     * http://localhost/consumer/payment/create?serial=11111
+     */
     @GetMapping("/consumer/payment/create")
     public CommonResult<Integer> create(Payment payment) {
         return restTemplate.postForObject(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
