@@ -17,7 +17,7 @@
     </properties>
 
     <dependencies>
-        <!-- 服务注册中心的客户端 eureka-client -->
+        <!-- 服务注册中心的客户端eureka-client,(内含Ribbon) -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
