@@ -2,12 +2,14 @@ package com.java.ccs.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @Author: Cao.cs
  * @Date: Created in 23:10 2022/4/20
  */
 @SpringBootApplication
+@EnableEurekaClient
 public class CloudConfigClientMain3355 {
 
     /**
