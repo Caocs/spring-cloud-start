@@ -73,7 +73,7 @@ public class PaymentController {
     }
 
     /**
-     * @return 模拟一个耗时很长的接口,用于测试OpenFeign的超时响应设置。
+     * @return 模拟一个耗时很长的接口, 用于测试OpenFeign的超时响应设置。
      */
     @GetMapping("/payment/feign/timeout")
     public String getFeignTimeOut() {
@@ -83,6 +83,19 @@ public class PaymentController {
             e.printStackTrace();
         }
         return serverPort;
+    }
+
+    /**
+     * 测试链路监控(sleuth+zipkin)
+     * 步骤：
+     * (1)下载zipkin的jar包(https://repo1.maven.org/maven2/io/zipkin/zipkin-server/2.23.4/)
+     * (2)控制台执行 java -jar zipkin-server-2.23.4-exec.jar (启动zipkin链路监控)
+     * (3)访问 localhost:9411/zipkin/ (面板)
+     * (4)在各个服务中配置zipkin+sleuth
+     */
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin() {
+        return "hi,i`am payment zipkin server fall back.welcome to ha";
     }
 
 }

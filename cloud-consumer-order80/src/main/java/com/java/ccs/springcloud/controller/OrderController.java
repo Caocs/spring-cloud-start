@@ -87,4 +87,19 @@ public class OrderController {
         return restTemplate.getForObject(uri + "/payment/lb", String.class);
     }
 
+
+    /**
+     * 测试zipkin+sleuth
+     * 步骤：
+     * (1)下载zipkin的jar包(https://repo1.maven.org/maven2/io/zipkin/zipkin-server/2.23.4/)
+     * (2)控制台执行 java -jar zipkin-server-2.23.4-exec.jar (启动zipkin链路监控)
+     * (3)访问 localhost:9411/zipkin/ (面板)
+     * (4)在各个服务中配置zipkin+sleuth
+     */
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin() {
+        String result = restTemplate.getForObject("http://localhost:8001" + "/payment/zipkin/", String.class);
+        return result;
+    }
+
 }

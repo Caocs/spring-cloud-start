@@ -17,6 +17,11 @@
     </properties>
 
     <dependencies>
+        <!--包含了sleuth+zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
         <!-- 服务注册中心的客户端eureka-client,(内含Ribbon) -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
