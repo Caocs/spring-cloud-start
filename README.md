@@ -1,5 +1,5 @@
 # spring-cloud-start
-![alt SpringCloud全家桶](./resource/SpringCloud全家桶.PNG)
+![alt SpringCloud全家桶](https://github.com/Caocs/spring-cloud-start/blob/main/resource/SpringCloud.PNG)
 
 学习视频: https://www.bilibili.com/video/BV18E411x7eT?p=1
 
