@@ -35,6 +35,9 @@
         <module>alibaba-nacos-consumer83</module>
         <module>alibaba-nacos-config-client3377</module>
         <module>alibaba-sentinel-service8401</module>
+        <module>alibaba-sentinel-nacos-provider9003</module>
+        <module>alibaba-sentinel-nacos-provider9004</module>
+        <module>alibaba-sentinel-nacos-consumer84</module>
     </modules>
 
     <name>Maven</name>
