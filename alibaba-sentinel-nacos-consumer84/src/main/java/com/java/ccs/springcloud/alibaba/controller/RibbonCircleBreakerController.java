@@ -28,7 +28,7 @@ public class RibbonCircleBreakerController {
     /**
      * (1)fallback只负责业务异常
      * (2)blockHandler只负责sentinel控制台配置违规
-     * (3)当同时配置fallback和blockHandler时,
+     * (3)当同时配置fallback和blockHandler时,当被限流降级抛出BlockException时只会进入blockHandler处理逻辑中。
      * (4)exceptionsToIgnore是当fallback时需要忽略的业务异常
      */
     @RequestMapping("/consumer/fallback/{id}")
